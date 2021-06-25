@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:mutlu_bayramlar/calculate.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -6,6 +9,19 @@ class MyApp extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.lightBlue,
+          title: Padding(
+            padding: const EdgeInsets.only(left: 200),
+            child: TextButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Calc()));
+                },
+                child: Text(
+                  "Fiyat Al",
+                  style: TextStyle(color: Colors.white),
+                )),
+          ),
+
         ),
         body: SafeArea(
           child: Container(

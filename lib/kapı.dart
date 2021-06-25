@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mutlu_bayramlar/calculate5.dart';
 
 class Palmiye2 extends StatelessWidget {
   @override
@@ -6,6 +7,17 @@ class Palmiye2 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.lightBlue,
+        title: Padding(
+          padding: const EdgeInsets.only(left: 200),
+          child: TextButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Calc4()));
+              },
+              child: Text(
+                "Fiyat Al",
+                style: TextStyle(color: Colors.white),
+              )),
+        ),
       ),
       body: SafeArea(
         child: Container(

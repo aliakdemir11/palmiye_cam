@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class Hakkinda extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp(debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(
             title: Row(
