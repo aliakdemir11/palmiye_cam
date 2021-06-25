@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mutlu_bayramlar/calculate4.dart';
 
 class Palmiye1 extends StatelessWidget {
   @override
@@ -6,42 +7,53 @@ class Palmiye1 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.lightBlue,
+        title: Padding(
+          padding: const EdgeInsets.fromLTRB(295, 0, 0, 0),
+          child: TextButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Calc3()));
+              },
+              child: Text(
+                "Fiyat Hesaplaması",
+                style: TextStyle(color: Colors.white),
+              )),
+        ),
       ),
       body: SafeArea(
         child: Container(
           child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(0, 230, 0, 0),
-            child: Container(
-              color: Colors.white38,
-              child: Text(
-                "GİYOTİN SİSTEMLERİ",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 25,
-                    fontFamily: "AlfaSlabOne"),
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 230, 0, 0),
+                child: Container(
+                  color: Colors.white38,
+                  child: Text(
+                    "GİYOTİN SİSTEMLERİ",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 25,
+                        fontFamily: "AlfaSlabOne"),
+                  ),
+                ),
               ),
-            ),
-          ),
-          Container(
-            color: Colors.white38,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-              child: Text(
-                "Genellikle kafe ve kamelyalardaki kullanımıyla meşhur olan otomatik açma-kapama özelliğiyle rahatlığın zirvesine ulaşmanızı sağlayacak giyotin sistemleri kapalı mekanları mekanları havadar hâle getirmekte bir numara! Estetik duruşu ve kolay kullanımıyla mekanınızı insanların gözdesi haline getirin.",
-                style: TextStyle(
-                    fontFamily: "Bangers",
-                    fontSize: 25,
-                    color: Colors.black),
-              ),
-            ),
-          )
-        ],
+              Container(
+                color: Colors.white38,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                  child: Text(
+                    "Genellikle kafe ve kamelyalardaki kullanımıyla meşhur olan otomatik açma-kapama özelliğiyle rahatlığın zirvesine ulaşmanızı sağlayacak giyotin sistemleri kapalı mekanları mekanları havadar hâle getirmekte bir numara! Estetik duruşu ve kolay kullanımıyla mekanınızı insanların gözdesi haline getirin.",
+                    style: TextStyle(
+                        fontFamily: "Bangers",
+                        fontSize: 25,
+                        color: Colors.black),
+                  ),
+                ),
+              )
+            ],
           ),
           decoration: BoxDecoration(
-          image: DecorationImage(
-              fit: BoxFit.cover, image: AssetImage("assets/giyotin.jpg"))),
+              image: DecorationImage(
+                  fit: BoxFit.cover, image: AssetImage("assets/giyotin.jpg"))),
         ),
       ),
     );

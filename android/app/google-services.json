@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "653474139900",
+    "project_id": "palmiyelogin",
+    "storage_bucket": "palmiyelogin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653474139900:android:d47a02194954240a835179",
+        "android_client_info": {
+          "package_name": "com.example.mutlu_bayramlar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653474139900-7mt0othnrfkuc3tpg95um99icoc66ibn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDu0PrV4pTV0sAKI44i0v2HwW9RhW6ntl4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "653474139900-7mt0othnrfkuc3tpg95um99icoc66ibn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

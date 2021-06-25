@@ -1,10 +1,15 @@
+import 'dart:ui';
 
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mutlu_bayramlar/hakk%C4%B1nda.dart';
 import 'package:mutlu_bayramlar/signin.dart';
+import 'package:mutlu_bayramlar/tablo.dart';
 
 import 'package:mutlu_bayramlar/urunSayfasi.dart';
+import 'package:mutlu_bayramlar/usta.dart';
+
+import 'graph2.dart';
 
 void main() {
   runApp(Pal());
@@ -25,9 +30,14 @@ class Palm extends StatefulWidget {
 class _PalmState extends State<Palm> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(routes: {"/sayfa2":(context)=>Xyz(), "/hakkında":(context)=>Hakkinda(),"/signin":(context)=>SignupPage()},
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-         home: ( Mainpage()) ,);
+      routes: {
+        "/sayfa2": (context) => Xyz(),
+        "/signin": (context) => SignupPage()
+      },
+      home: (Mainpage()),
+    );
   }
 }
 
@@ -40,6 +50,130 @@ class _MainpageState extends State<Mainpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Padding(
+                padding: EdgeInsets.only(top: 50, left: 40),
+                child: Text(
+                  'HOŞGELDİNİZ',
+                  style: TextStyle(
+                    fontFamily: 'Charmonman' ,
+                    color: Colors.white,
+                    fontSize: 27,
+                  ),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.message),
+              title: Text('Fiyat Listesi'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                        transitionDuration: Duration(milliseconds: 400),
+                        transitionsBuilder: (BuildContext context,
+                            Animation<double> animation,
+                            Animation<double> secAnimation,
+                            Widget child) {
+                          return ScaleTransition(
+                            alignment: Alignment.center,
+                            scale: animation,
+                            child: child,
+                          );
+                        },
+                        pageBuilder: (BuildContext context,
+                            Animation<double> animation,
+                            Animation<double> secAnimation) {
+                          return Tablo();
+                        }));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.account_circle),
+              title: Text('Yalıtım Grafiği'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                        transitionDuration: Duration(milliseconds: 400),
+                        transitionsBuilder: (BuildContext context,
+                            Animation<double> animation,
+                            Animation<double> secAnimation,
+                            Widget child) {
+                          return ScaleTransition(
+                            alignment: Alignment.center,
+                            scale: animation,
+                            child: child,
+                          );
+                        },
+                        pageBuilder: (BuildContext context,
+                            Animation<double> animation,
+                            Animation<double> secAnimation) {
+                          return GrafikSayfa();
+                        }));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.account_circle),
+              title: Text('Sipariş İçin..'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                        transitionDuration: Duration(milliseconds: 400),
+                        transitionsBuilder: (BuildContext context,
+                            Animation<double> animation,
+                            Animation<double> secAnimation,
+                            Widget child) {
+                          return ScaleTransition(
+                            alignment: Alignment.center,
+                            scale: animation,
+                            child: child,
+                          );
+                        },
+                        pageBuilder: (BuildContext context,
+                            Animation<double> animation,
+                            Animation<double> secAnimation) {
+                          return YrK();
+                        }));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Hakkında'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                        transitionDuration: Duration(milliseconds: 400),
+                        transitionsBuilder: (BuildContext context,
+                            Animation<double> animation,
+                            Animation<double> secAnimation,
+                            Widget child) {
+                          return ScaleTransition(
+                            alignment: Alignment.center,
+                            scale: animation,
+                            child: child,
+                          );
+                        },
+                        pageBuilder: (BuildContext context,
+                            Animation<double> animation,
+                            Animation<double> secAnimation) {
+                          return Hakkinda();
+                        }));
+              },
+            ),
+          ],
+        ),
+      ),
       body: SafeArea(
         child: Container(
           decoration: BoxDecoration(
@@ -48,7 +182,7 @@ class _MainpageState extends State<Mainpage> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(0, 80, 0, 0),
+                padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
                 child: Text(
                   "palmiye",
                   style: TextStyle(
@@ -70,50 +204,41 @@ class _MainpageState extends State<Mainpage> {
               Divider(
                 height: 50,
               ),
-
-              ElevatedButton(child:
-
-              Text("Gözat"),
-                onPressed: (){
-                  Navigator.pushNamed(context,"/sayfa2");
-                },),
-
+              ElevatedButton(
+                child: Text("Gözat"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "/sayfa2");
+                },
+              ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 150, 0, 0),
                 child: Column(
                   children: [
-                    Container(decoration: BoxDecoration(color: Colors.white,
-                        borderRadius: BorderRadius.circular(20.0)
-                    ),
-                      child: TextButton( onPressed: (){
-                        Navigator.pushNamed(context, "/signin");
-                      },
+                    Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20.0)),
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, "/signin");
+                        },
                         child: Text(
                           "MÜŞTERİMİZ OLMAK İÇİN TIKLAYIN",
                           style: TextStyle(color: Colors.black),
-
                         ),
                       ),
                     ),
                     SizedBox(
                       height: 10,
                     ),
-                    Container(color: Colors.white,
+                    Container(
+                      color: Colors.white,
                       child: Text(
                         "Detaylı Bilgi İçin: 0555 555 55 55",
                         style: TextStyle(
                           color: Colors.black,
                         ),
                       ),
-                    ),
-                    Container(child: TextButton(
-                      child: Text("Hakkında..",
-                      style: TextStyle(color: Colors.white),),
-                      onPressed: (){
-                        Navigator.pushNamed (context,"/hakkında");
-
-
-                    },),
                     ),
                   ],
                 ),
@@ -122,11 +247,6 @@ class _MainpageState extends State<Mainpage> {
           ),
         ),
       ),
-
     );
   }
 }
-
-
-
-
